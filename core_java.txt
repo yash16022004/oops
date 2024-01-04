@@ -1,0 +1,172 @@
+import java.util.*;
+class class_object{
+    private int rollno;
+    private String name;
+    private int age;
+    public void setdata(int rollno,String name,int age){
+        this.rollno=rollno;
+        this.age=age;
+        this.name=name;
+    }
+    public void printdata(){
+        System.out.println("rollno = "+rollno);
+        System.out.println("name = "+name);
+        System.out.println("age = "+age);
+        System.out.println();
+    }
+}
+public class Myprog{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        class_object co[];
+        co=new class_object[3];
+        
+        for(int i=0;i<3;i++){
+            int rollno=sc.nextInt();
+            String name=sc.next();
+            int age=sc.nextInt();
+        
+            co[i]=new class_object();
+            co[i].setdata(rollno,name,age);
+        }
+        for(int i=0;i<3;i++){
+            co[i].printdata();
+        }
+    }
+}
+
+
+//multilevel inheritance
+class one{
+    public void print_geek(){
+        System.out.println("geek");
+    }
+}
+class two extends one{
+    public void print_for(){
+        System.out.println("for");
+    }
+}
+class three extends two{
+    public void print_geeks(){
+        System.out.println("geeks");
+    }
+}
+public class demo {
+    public static void main(String args[]){
+        //inheritance single , multilevel , multiple , hybrid , hirerachical
+        three t=new three();
+        t.print_geek();
+        t.print_for();
+        t.print_geeks();
+    }
+}
+
+//multilevel inheritance
+class common_data{
+     String name;
+     int age;
+}
+class student extends common_data{
+    //included common data like name and age
+    private int rollno;
+    public void setrollno(int roll){
+        this.rollno=roll;
+    }
+    public void get_student_data(){
+        System.out.println("roll no : "+rollno);
+        System.out.println("name : "+name);
+        System.out.println("age : "+age);
+        System.out.println();
+    }
+}
+class staff extends common_data{
+    //included common data like name and age
+    private int emp_id;
+    public void set_emp_id(int emp_id){
+        this.emp_id=emp_id;
+    }
+
+    public void get_emp_data(){
+        System.out.println("emp id = "+emp_id);
+        System.out.println("name = "+name);
+        System.out.println("age = "+age);
+        System.out.println();
+    }
+
+}
+public class demo {
+    public static void main(String args[]){
+        //inheritance single , multilevel , multiple , hybrid , hirerachical
+        //student data
+        student s=new student();
+        s.setrollno(1);;
+        s.name="yash";
+        s.age=19;
+
+        s.get_student_data();
+
+        //employee data
+        staff e1=new staff();
+        e1.set_emp_id(101);
+        e1.name="rakesh shrivastav";
+        e1.age=30;
+
+        e1.get_emp_data();
+        }
+}
+
+//2D array
+import java.util.*;
+class demo{
+    public static void main(String args[]){
+        //scanner function for use library inbuilt function
+        Scanner s=new Scanner(System.in);
+        
+        //taking row and column value from the use
+        System.out.print("Enter Row = ");
+        int row=s.nextInt();
+        System.out.print("Enter Col = ");
+        int col=s.nextInt();
+
+        //2d array which is having row and col
+        int[][] marks=new int[row][col];
+        
+        //r for row and c for c for col
+        System.out.println("\nPlease Fill "+row*col+" Values in 2D Array");
+        for(int r=0;r<row;r++){
+            for(int c=0;c<col;c++){
+                //taking value from the user
+                System.out.print("Element ["+r+"]["+c+"] = ");
+                marks[r][c]=s.nextInt();
+            }
+        }
+        //printing array same as r = row and c = col
+        System.out.println("\nOutput of "+row+" X "+col+" 2D Array");
+        for(int r=0;r<row;r++){
+            for(int c=0;c<col;c++){
+               //printing value
+                System.out.print(marks[r][c]+"  ");
+            }
+            System.out.println("\n");
+        }
+    }
+}
+
+
+
+
+
+// interface In1{
+//     final int a=10;
+//     void display();
+// }
+// class abstraction implements In1 {
+//     public void display(){
+//         System.out.println("a = "+a);
+//     }
+//     public static void main(String[] args) {
+//         abstraction a=new abstraction();
+//         a.display();
+//     }
+// }
